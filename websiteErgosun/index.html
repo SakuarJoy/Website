@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ergosun — Zonnen. Zonder. Zorgen.</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <img src="https://ergosun.be/wp-content/uploads/2024/09/Ergosun-SimplyMe_logo-alt.png" alt="Ergosun logo">
+      </a>
+      <nav class="main-nav">
+        <a href="https://ergosun.be/over-ons/">Over ons</a>
+        <a href="https://ergosun.be/toestellen">Toestellen</a>
+        <a href="https://ergosun.be/faq-categorien/">FAQ</a>
+        <a href="https://ergosun.be/tarieven/">Tarieven</a>
+        <a href="https://ergosun.be/shop/">Shop</a>
+        <a href="https://ergosun.be/gezondzonnen/">Gezond zonnen</a>
+        <p> </p>
+        <a class="cta" href="https://ergosun.be/tarieven/">Voordelig zonnen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+      <section class="hero">
+          <div class="hero-image">
+              <img src="" alt="Hero image">
+
+          </div>
+          <div class="container">
+              <h1>Zonnen. Zonder. Zorgen.</h1>
+              <p>Ontdek jouw perfecte zonnen-plan met onze interactieve quiz. Krijg een persoonlijk schema op maat van jouw huidtype, doelen en budget.</p>
+              <a class="btn" href="#quiz">Start de quiz</a>
+          </div>
+
+          <section class="info container">
+              <h2>Kom je voor de eerste keer?</h2>
+              <p>Probeer een losse sessie of neem contact met ons op voor advies. Gebruik altijd de juiste bescherming en volg de richtlijnen van onze medewerkers.</p>
+
+              <h2>Nieuwsbrief</h2>
+              <p>Blijf op de hoogte van promoties en tips.</p>
+              <p><a class="btn" href="https://campaigns.ergosun.be/subscription?f=VGhEp892j4jai55Cm7QZX3whC5qYkPhj47GWx892JaVhf8922NLQ7DD763IpE346Q0GdCACZH6kfemnlpGpKNL9gragh6w">Registreer je hier</a></p>
+          </section>
+
+          <section id="quiz" class="quiz container">
+              <h2>Persoonlijk Zonnebank Plan</h2>
+              <p>Beantwoord enkele vragen en krijg een schatting van hoeveel sessies je nodig hebt en een planning.</p>
+
+              <form id="planForm" onsubmit="return false;">
+                  <div class="row">
+                      <label>Sensitiviteit</label>
+                      <select id="sensitivity">
+                          <option value="low">Laag</option>
+                          <option value="medium" selected>Middel</option>
+                          <option value="high">Hoog</option>
+                      </select>
+                  </div>
+
+                  <div class="row">
+                      <label>Waarom kom je?</label>
+                      <select id="reason">
+                          <option value="vacation">Voorbereiden op vakantie</option>
+                          <option value="maintain">Onderhouden huidkleur</option>
+                          <option value="event">Voor een feestje / event</option>
+                          <option value="wellbeing">Algemeen welzijn / teint</option>
+                          <option value="other">Anders</option>
+                      </select>
+                  </div>
+
+                  <div class="row">
+                      <label>Budget per sessie</label>
+                      <select id="budget">
+                          <option value="low">&lt; 20</option>
+                          <option value="mid">€20 - €30</option>
+                          <option value="high">&gt; €30 </option>
+                          <option value="un">Onbekend</option>
+                      </select>
+                  </div>
+
+                  <div class="row">
+                      <label>Hoe vaak per week kun je komen?</label>
+                      <input id="frequency" type="number" min="1" max="3" value="2">
+                  </div>
+
+                  <div class="row">
+                      <label>Huidtype krijg je mee bij inschrijving</label>
+                      <div class="skin-types">
+                          <label><input type="radio" name="skintype" value="1"> Type I</label>
+                          <label><input type="radio" name="skintype" value="2"> Type II</label>
+                          <label><input type="radio" name="skintype" value="3" checked> Type III</label>
+                          <label><input type="radio" name="skintype" value="4"> Type IV</label>
+                          <label><input type="radio" name="skintype" value="5"> Type V</label>
+                      </div>
+                      <div class="upload">
+                          <label>Upload een foto (optioneel)</label>
+                          <input id="photo" type="file" accept="image/*">
+                          <div id="previewWrap"><img id="preview" alt="preview"></div>
+                          <small id="detectNote">Foto-detectie is een eenvoudige schatting en geen professioneel advies.</small>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <label>Gewenst resultaat</label>
+                      <select id="goal">
+                          <option value="subtle">Subtiel</option>
+                          <option value="medium" selected>Medium</option>
+                          <option value="deep">Intens</option>
+                      </select>
+                  </div>
+
+                  // Toon foto met filter als resultaat
+
+                  <div class="returnPhoto">
+                      <label>Download de foto (optioneel)</label>
+                      <output id="photo" type="file" accept="image/*"></output>
+                      <div id="previewWrap"><img id="preview" alt="preview"></div>
+                      <small id="detectNote">Foto-detectie is een eenvoudige schatting.</small>
+                  </div>
+                  <p><button id="calc" class="btn">Bereken planning</button></p>
+              </form>
+
+              <div id="result" class="result" hidden>
+                  <h3>Jouw plan</h3>
+                  <p id="summary"></p>
+                  <div id="calendar"></div>
+              </div>
+          </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Openingsuren</h4>
+        <p>Ma: 9u – 21u | Di: Gesloten | Woe – Vrij: 9u – 21u | Za: 10u – 19u | Zon: 10u – 17u</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Tel: <a href="tel:036663220">03 666 32 20</a></p>
+      </div>
+      <div>
+        <img src="https://ergosun.be/wp-content/uploads/2025/02/Logo-Ergosun.png" alt="Ergosun" style="max-width:140px">
+      </div>
+    </div>
+    <div class="container copyright">Zonnen.Zonder.Zorgen. © Ergosun</div>
+  </footer>
+  <script>
+      // Planner logic
+      (function () {
+          const photo = document.getElementById('photo');
+          const preview = document.getElementById('preview');
+          const detectNote = document.getElementById('detectNote');
+          const calc = document.getElementById('calc');
+          const returnPhoto = document.getElementById('returnPhoto');
+          const result = document.getElementById('result');
+          const summary = document.getElemPhotentById('summary');
+          const calendarWrap = document.getElementById('calendar');
+
+          function guessSkinTypeFromImage(img) {
+              // simple heuristic: compute average brightness and map to a skin type 1..5
+              const c = document.createElement('canvas');
+              const ctx = c.getContext('2d');
+              const w = 100, h = 100;
+              c.width = w; c.height = h;
+              ctx.drawImage(img, 0, 0, w, h);
+              const d = ctx.getImageData(0, 0, w, h).data;
+              let r = 0, g = 0, b = 0, count = 0;
+              for (let i = 0; i < d.length; i += 4) { r += d[i]; g += d[i + 1]; b += d[i + 2]; count++; }
+              const avg = (r + g + b) / (3 * count);
+              // darker skin -> lower brightness value -> map to higher type number
+              if (avg > 200) return '1, mag niet zonnen';
+              if (avg > 170) return '2';
+              if (avg > 130) return '3';
+              if (avg > 100) return '4';
+              return '5';
+          }
+
+          photo.addEventListener('change', function (e) {
+              const f = e.target.files && e.target.files[0];
+              if (!f) return;
+              const url = URL.createObjectURL(f);
+              preview.src = url; preview.onload = function () {
+                  try {
+                      const guess = guessSkinTypeFromImage(preview);
+                      const radios = document.getElementsByName('skintype');
+                      for (const r of radios) r.checked = (r.value === guess);
+                      detectNote.textContent = 'Detectie: huidtype ~ ' + guess + ' (schatting)';
+                  } catch (err) {
+                      detectNote.textContent = 'Foto kon niet geanalyseerd worden.';
+                  }
+                  URL.revokeObjectURL(url);
+              }
+          });
+
+          function sessionsForGoal(goal) {
+              // base sessions per desired intensity
+              if (goal === 'subtle') return 3;
+              if (goal === 'medium') return 6;
+              return 10; // deep
+          }
+
+          calc.addEventListener('click', function () {
+              const sensitivity = document.getElementById('sensitivity').value;
+              const reason = document.getElementById('reason').value;
+              const budget = document.getElementById('budget').value;
+              let frequency = parseInt(document.getElementById('frequency').value) || 1;
+              const goal = document.getElementById('goal').value;
+              const radios = document.getElementsByName('skintype');
+              let skintype = '3';
+              for (const r of radios) if (r.checked) skintype = r.value;
+
+              let sessions = sessionsForGoal(goal);
+              // adjust sessions based on skintype and sensitivity
+              // lighter skin (type 1-2) -> fewer sessions, darker -> more
+              sessions += (parseInt(skintype) - 3);
+              if (sensitivity === 'high') sessions = Math.max(1, Math.round(sessions * 1.1));
+              if (sensitivity === 'low') sessions = Math.max(1, Math.round(sessions * 0.9));
+
+              // ensure at least 1 session
+              sessions = Math.max(1, sessions);
+
+              // if frequency is unrealistic, clamp
+              frequency = Math.min(Math.max(1, frequency), 5);
+
+              const daysBetween = Math.round(7 / frequency);
+              const weeks = Math.ceil(sessions / frequency);
+
+              // build schedule dates
+              const dates = [];
+              let cur = new Date();
+              for (let i = 0; i < sessions; i++) {
+                  dates.push(new Date(cur.getFullYear(), cur.getMonth(), cur.getDate() + i * daysBetween));
+              }
+
+              // render summary
+              summary.innerHTML = `Geschatte sessies: <strong>${sessions}</strong> over ca. <strong>${weeks}</strong> week(en).<br>Frequentie: ${frequency} keer/week. Huidtype: ${skintype}. Reden: ${reason}. Budget: ${budget}.`;
+
+              // render calendar (simple grid of dates)
+              calendarWrap.innerHTML = '';
+              const grid = document.createElement('div'); grid.className = 'calendar-grid';
+              // show day names header
+              const dayNames = ['Ma', 'Di', 'Woe', 'Do', 'Vr', 'Za', 'Zo'];
+              for (let d of dayNames) { const cell = document.createElement('div'); cell.className = 'calendar-cell'; cell.style.fontWeight = '700'; cell.textContent = d; grid.appendChild(cell); }
+              // compute start of week (Monday)
+              const start = new Date();
+              const day = start.getDay();
+              const offset = (day === 0 ? -6 : 1 - day); // to Monday
+              const weekStart = new Date(start.getFullYear(), start.getMonth(), start.getDate() + offset);
+
+              // show weeks until completion
+              let showDays = weeks * 7;
+              for (let i = 0; i < showDays; i++) {
+                  const cellDate = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate() + i);
+                  const cell = document.createElement('div'); cell.className = 'calendar-cell';
+                  const dnum = cellDate.getDate();
+                  cell.innerHTML = `<div style="font-size:0.85rem">${dnum}/${cellDate.getMonth() + 1}</div>`;
+                  // mark if a session falls on this day
+                  for (const [idx, sd] of dates.entries()) {
+                      if (sd.getFullYear() === cellDate.getFullYear() && sd.getMonth() === cellDate.getMonth() && sd.getDate() === cellDate.getDate()) {
+                          const mark = document.createElement('div'); mark.style.marginTop = '6px'; mark.style.fontSize = '0.85rem'; mark.style.background = '#ff7a00'; mark.style.color = '#fff'; mark.style.padding = '3px'; mark.style.borderRadius = '4px'; mark.textContent = 'Sessie ' + (idx + 1);
+                          cell.appendChild(mark);
+                      }
+                  }
+                  grid.appendChild(cell);
+              }
+
+              calendarWrap.appendChild(grid);
+              result.hidden = false;
+              // scroll into view
+              result.scrollIntoView({ behavior: 'smooth' });
+          });
+      })();
+  </script>
+ </body>
+ </html>
