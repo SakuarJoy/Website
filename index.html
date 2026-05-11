@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ergosun — Zonnen. Zonder. Zorgen.</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">
+        <img src="https://ergosun.be/wp-content/uploads/2024/09/Ergosun-SimplyMe_logo-alt.png" alt="Ergosun logo">
+      </a>
+      <nav class="main-nav">
+        <a href="https://ergosun.be/over-ons/">Over ons</a>
+        <a href="https://ergosun.be/toestellen">Toestellen</a>
+        <a href="https://ergosun.be/faq-categorien/">FAQ</a>
+        <a href="https://ergosun.be/tarieven/">Tarieven</a>
+        <a href="https://ergosun.be/shop/">Shop</a>
+        <a href="https://ergosun.be/gezondzonnen/">Gezond zonnen</a>
+        <p> </p>
+        <a class="cta" href="https://ergosun.be/tarieven/">Voordelig zonnen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+      <!-- 3D Upload Viewer: first section -->
+      <section id="viewer" class="viewer container">
+          <div class="viewer-grid">
+              <div class="viewer-text">
+                  <h1>Create yourself</h1>
+                  <p>Met onze nieuwe bodyscan kun je jouw toekomstige kleur zien en berekenen hoe lang het zal duren om jouw gewenste resultaat te bereiken.</p>
+                  <p>Door AI te gebruiken om het lichaam te scannen en filters te plaatsen, krijg je een idee van hoe jouw gezonde huid eruit kan zien.
+                  Wanneer we de scan met onze vakkennis combineren, .</p>
+              </div>
+              <div class="stage-wrap">
+                  <div id="stage" class="stage">
+                      <div id="card" class="card">
+                          <img id="cardImg" src="foto1.png" alt="viewer image">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section class="hero container">
+          <div class="hero-media">
+              <img class="hero-img" src="foto2.png" alt="Ergosun banner">
+          </div>
+          <div class="hero-content">
+              <h1>Zonnen. Zonder. Zorgen.</h1>
+              <p>Nog nooit naar de zon geweest? Geen zorgen, wij helpen je op weg. Dankzij onze bodyscan krijg je een beter overzicht van jouw lichaam en wat het nodig heeft.</p>
+              
+          </div>
+      </section>
+
+      <section class="info container">
+          <h2>Kom je voor de eerste keer?</h2>
+          <p>Probeer een losse sessie of neem contact met ons op voor advies. Gebruik altijd de juiste bescherming en volg de richtlijnen van onze medewerkers.</p>
+          <p>In de winkel wordt jouw huidtype bepaald met enkele vragen en nadien kan je samen met ons jouw zonnige traject bepalen.</p>
+      </section>
+
+      <section id="quiz" class="quiz container">
+          <h2>Voorproefje van jouw traject</h2>
+          <p>Beantwoord enkele vragen en krijg een schatting van hoeveel sessies je nodig hebt en een planning.</p>
+
+          <form id="planForm" onsubmit="return false;">
+         
+              <div class="row">
+                  <label>Waarom kom je?</label>
+                  <select id="reason">
+                      <option value="vacation">Voorbereiden op vakantie</option>
+                      <option value="event">Voor een evenement</option>
+                      <option value="wellbeing">Algemeen welzijn</option>
+                      <option value="other">Anders...</option>
+                  </select>
+              </div>
+
+              <div class="row">
+                  <label>Hoe vaak per week kun je komen? (Maximun 3 keer per week)</label>
+                  <select id="frequency">
+                      <option value="1" selected>1 keer/week</option>
+                      <option value="2">2 keer/week</option>
+                      <option value="3">3 keer/week</option>
+                  </select>
+              </div>
+
+              <div class="row">
+                  <label>
+                      <input id="existingCustomer" type="radio" name="customerType" required> Bestaande klant
+                      <br>
+                      <input id="newCustomer" type="radio" name="customerType" required> Nieuwe klant
+                  </label>
+              </div>
+
+              <div class="row">
+                  <label>Huidtype krijg je mee bij inschrijving, dit dient als voorbeeld</label>
+                  <div class="skin-types">
+                      <label><input type="radio" name="skintype" value="1"> Type I</label>
+                      <label><input type="radio" name="skintype" value="2"> Type II</label>
+                      <label><input type="radio" name="skintype" value="3" checked> Type III</label>
+                      <label><input type="radio" name="skintype" value="4"> Type IV</label>
+                      <label><input type="radio" name="skintype" value="5"> Type V</label>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <label>Gewenst resultaat</label>
+                  <select id="goal">
+                      <option value="subtle">Subtiel</option>
+                      <option value="medium" selected>Medium</option>
+                      <option value="deep">Deep</option>
+                  </select>
+              </div>
+              <p><button id="calc" class="btn">Bereken planning</button></p>
+          </form>
+
+          <div id="result" class="result" hidden>
+              <h3>Jouw traject</h3>
+              <p id="summary"></p>
+              <div id="calendar">
+              </div>
+          </div>
+
+          <div class="interested">
+              <h1>Interesse?</h1>
+              <p>Maak nu jouw afspraak door je e-mailadres in te vullen:</p>
+              <input class="email-input" type="email" placeholder="Vul je e-mailadres in">
+              <br />
+              <textarea class="email-placeholder" placeholder="Wanneer wil je komen en heb je nog vragen?"></textarea>
+              <br />
+              <button id="interested">Afspraak maken</button>
+          </div>
+      </section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>Openingsuren</h4>
+        <p>Ma: 9u – 21u | Di: Gesloten | Woe – Vrij: 9u – 21u | Za: 10u – 19u | Zon: 10u – 17u</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Tel: <a href="tel:036663220">03 666 32 20</a></p>
+      </div>
+      <div>
+        <img src="https://ergosun.be/wp-content/uploads/2025/02/Logo-Ergosun.png" alt="Ergosun" style="max-width:140px">
+      </div>
+    </div>
+    <div class="container copyright">Zonnen.Zonder.Zorgen. © Ergosun</div>
+  </footer>
+  <script>
+      // Elements
+      const myButton = document.getElementById('interested');
+      if (myButton) {
+          myButton.addEventListener('click', function () {
+              const emailInput = document.querySelector('.email-input');
+              const messageInput = document.querySelector('.email-placeholder');
+              const email = emailInput.value.trim();
+              const message = messageInput.value.trim();
+              if (email) {
+                  alert(`Bedankt! We nemen snel contact met je op via ${email}. Je bericht: "${message}"`);
+                  emailInput.value = '';
+                  messageInput.value = '';
+              } else {
+                  alert('Vul alstublieft een geldig e-mailadres in.');
+              }
+          });
+      }
+
+
+      const calc = document.getElementById('calc');
+      const summary = document.getElementById('summary');
+      const calendar = document.getElementById('calendar');
+      const result = document.getElementById('result');
+
+      calc.addEventListener('click', function (e) {
+          e.preventDefault();
+          const reason = document.getElementById('reason').value;
+          let frequency = parseInt(document.getElementById('frequency').value, 10) || 1;
+          const existing = !!document.getElementById('existingCustomer').checked;
+          const goal = document.getElementById('goal').value;
+          const skintypeInput = document.querySelector('input[name="skintype"]:checked');
+          const skintype = skintypeInput ? skintypeInput.value : '3';
+
+          // handle skin type 1 (not recommended)
+          if (skintype === '1') {
+              summary.innerHTML = `<strong>Opmerking:</strong> Huidtype I wordt afgeraden om onder de zonnebank te gaan. Neem contact op voor advies.`;
+              calendar.innerHTML = '';
+              result.hidden = false;
+              result.scrollIntoView({ behavior: 'smooth' });
+              return;
+          }
+
+          // determine bed type and session minutes
+          let bedType = 'Standard';
+          let firstSessionMinutes = 0;
+          let subsequentMinutes = 0;
+          switch (skintype) {
+              case '2': bedType = 'Light'; firstSessionMinutes = existing ? 0 : 12; subsequentMinutes = existing ? 16 : 16; break;
+              case '3': bedType = 'Medium'; firstSessionMinutes = existing ? 0 : 16; subsequentMinutes = existing ? 20 : 20; break;
+              case '4': bedType = 'Medium'; firstSessionMinutes = existing ? 0 : 20; subsequentMinutes = 25; break;
+              case '5': bedType = 'Medium'; firstSessionMinutes = existing ? 0 : 20; subsequentMinutes = 25; break;
+              default: bedType = 'Standard'; firstSessionMinutes = 15; subsequentMinutes = 20; break;
+          }
+
+          // estimate number of sessions based on desired goal
+          let sessions = 10; // default for 'medium'
+          if (goal === 'subtle') sessions = 9;
+          else if (goal === 'deep') sessions = 15;
+          if (existing) sessions = Math.max(1, sessions - 1);
+
+          frequency = Math.min(Math.max(1, frequency), 3); // allowed 1..3 per UI
+          const daysBetween = Math.max(4, Math.round(7 / frequency));
+          const weeks = Math.ceil(sessions / frequency);
+
+          // build session dates
+          const dates = [];
+          const cur = new Date();
+          for (let i = 0; i < sessions; i++) {
+              const d = new Date(cur.getTime() + i * daysBetween * 24 * 60 * 60 * 1000);
+              dates.push(d);
+          }
+
+          const firstMinutesDisplay = firstSessionMinutes || subsequentMinutes;
+          summary.innerHTML = `Geschatte sessies: <strong>${sessions}</strong> over ca. <strong>${weeks}</strong> week(en).<br>Frequentie: ${frequency} keer/week. Huidtype: ${skintype}. Bedtype: ${bedType}. Eerste sessie: ${firstMinutesDisplay} min. Reden: ${reason}.`;
+
+          // render calendar
+          calendar.innerHTML = '';
+          const grid = document.createElement('div');
+          grid.className = 'calendar-grid';
+          const dayNames = ['Ma', 'Di', 'Woe', 'Do', 'Vr', 'Za', 'Zo'];
+          for (const d of dayNames) {
+              const cell = document.createElement('div');
+              cell.className = 'calendar-cell';
+              cell.style.fontWeight = '700';
+              cell.textContent = d;
+              grid.appendChild(cell);
+          }
+
+          const start = new Date();
+          const day = start.getDay();
+          const offset = (day === 0 ? -6 : 1 - day); // make Monday = start
+          const weekStart = new Date(start.getFullYear(), start.getMonth(), start.getDate() + offset);
+          const showDays = weeks * 7;
+
+          for (let i = 0; i < showDays; i++) {
+              const cellDate = new Date(weekStart.getFullYear(), weekStart.getMonth(), weekStart.getDate() + i);
+              const cell = document.createElement('div');
+              cell.className = 'calendar-cell';
+              const dnum = cellDate.getDate();
+              cell.innerHTML = `<div style="font-size:0.85rem">${dnum}/${cellDate.getMonth() + 1}</div>`;
+              for (const [idx, sd] of dates.entries()) {
+                  if (sd.getFullYear() === cellDate.getFullYear() && sd.getMonth() === cellDate.getMonth() && sd.getDate() === cellDate.getDate()) {
+                      const minutes = (idx === 0 ? firstSessionMinutes : subsequentMinutes) || subsequentMinutes || firstSessionMinutes || 0;
+                      const mark = document.createElement('div');
+                      mark.style.marginTop = '6px';
+                      mark.style.fontSize = '0.85rem';
+                      mark.style.background = '#ff7a00';
+                      mark.style.color = '#fff';
+                      mark.style.padding = '6px 6px';
+                      mark.style.borderRadius = '6px';
+                      mark.style.display = 'inline-block';
+                      mark.style.minWidth = '90px';
+                      mark.style.boxSizing = 'border-box';
+                      mark.innerHTML = `<strong>Sessie ${idx + 1}</strong><br><span style="font-size:0.85rem">${minutes} min • ${bedType}</span>`;
+                      cell.appendChild(mark);
+                  }
+              }
+              grid.appendChild(cell);
+          }
+
+          calendar.appendChild(grid);
+          result.hidden = false;
+          result.scrollIntoView({ behavior: 'smooth' });
+      });
+  </script>
+ </body>
+ </html>
