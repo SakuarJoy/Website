@@ -1,0 +1,299 @@
+*{box-sizing:border-box}
+html {
+    background-color: #ED944D;
+}
+body {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+    line-height: 1.5;
+    color: #222;
+    margin: 0;
+}
+
+/* Viewer / 3D card */
+.viewer-grid {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 1rem;
+    align-items: center;
+    color: white;
+}
+.stage-wrap {
+    perspective:1200px
+
+}
+.stage {
+    width:420px;
+    height:300px;
+    display:flex;
+    align-items:center;
+    justify-content:center
+
+}
+.card {
+    width: 380px;
+    height: 260px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform .05s linear;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    background: blue;
+}
+
+.card img {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block
+
+}
+@media (max-width:900px) {
+    .viewer-grid {
+        grid-template-columns: 1fr;
+    }
+  .stage{
+      width:100%;
+      height:260px
+
+  }
+  .card{
+      width:100%;
+      height:100%
+
+  }
+}
+
+.container{
+    max-width:1100px;
+    margin:0 auto;
+    padding:1rem;
+
+}
+.site-header{
+    background: white;
+    border-bottom:1px solid #eee;
+    position:sticky;top:0;
+    z-index:40;
+
+}
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+}
+.logo img{
+    height:48px;
+
+}
+.main-nav{
+    display:flex;
+    gap:.5rem;
+    align-items:center;
+
+}
+.main-nav a{
+    color:#222;
+    text-decoration:none;
+    padding:.5rem .6rem;
+    border-radius:4px;
+
+}
+.main-nav a:hover{
+    background:#f7f7f7;
+
+}
+.main-nav .cta{
+    background:#ff7a00;
+    color:#fff;
+
+}
+.main-nav .cta:hover{
+    opacity:.95;
+
+}
+.info{
+    background:#fff;
+    padding:1rem;
+    border-radius:8px;
+    border:1px solid #f0f0f0;
+    margin-bottom:2rem;
+
+}
+.locations ul{
+    padding-left:1rem;
+
+}
+.hero{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    padding:2rem 0
+
+}
+.hero-media{
+    flex:1
+
+}
+.hero-img{
+    width:100%;
+    height:320px;object-fit:cover;}
+.hero-content{
+    flex:1;
+    
+
+}
+.hero h1{
+    font-size:2rem;
+    margin:0 0 .5rem;
+    color:white;
+
+}
+.hero p{
+    max-width:520px;
+    margin:0 0 1rem;
+    color:white;
+
+}
+
+/* Quiz / planner styles */
+
+.quiz form{
+    display:block;
+    background:#fff;
+    padding:1rem;
+    border-radius:8px;
+    border:1px solid #f0f0f0;
+    margin-bottom:1rem;
+
+}
+.quiz .row{
+    display:flex;
+    flex-direction:column;
+    gap:.4rem;
+    margin-bottom:.75rem;
+
+}
+.quiz label{
+    font-weight:600;
+
+}
+.quiz select,.quiz input[type="number"],.quiz input[type="file"]{
+    padding:.5rem;
+    border:1px solid #ddd;
+    border-radius:6px;
+
+}
+.skin-types{display:flex;
+            gap:.8rem;
+            flex-wrap:wrap;
+
+}
+.skin-types label{
+    background:#fafafa;
+    padding:.4rem .6rem;
+    border-radius:6px;
+    border:1px solid #eee;
+
+}
+.upload{
+    margin-top:.5rem;
+
+}
+#previewWrap{
+    margin-top:.5rem;
+
+}
+#preview{
+    max-width:140px;
+    max-height:140px;
+    border-radius:6px;
+    display:block;
+
+}
+.result{background:#fff
+        ;padding:1rem;
+         border-radius:8px;
+         border:1px solid #f0f0f0;
+         
+}
+#calendar{
+    margin-top:1rem;
+
+}
+.calendar-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:6px;
+
+}
+.calendar-cell{
+    background:#fff;
+    padding:.5rem;
+    border-radius:6px;
+    border:1px solid #eee;
+    text-align:center;
+    font-size:.9rem;
+
+}
+.calendar-complete{
+    background:linear-gradient(90deg,#ffecd1,#ffe0b3);
+
+}
+.email-input {
+    display: flex;
+    gap: .5rem;
+    margin-top: 1rem;
+    width: 250px;
+}
+.email-placeholder {
+    display: flex;
+    gap: .2rem;
+    width: 100%;
+    height: 100px;
+}
+.site-footer{
+    background:#111;
+    color:#ddd;
+    padding:1.2rem 0;
+    margin-top:2rem;
+
+}
+.footer-inner{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    justify-content:space-between;
+
+}
+.footer-inner h4{
+    margin:0 0 .4rem;
+    color:#fff;
+
+}
+.copyright{
+    padding:1rem 0;
+    color:#999;
+    text-align:center;
+
+}
+@media (max-width:800px) {
+    .hero-img {
+        height: 300px;
+    }
+
+    .membership {
+        grid-template-columns: 1fr;
+    }
+
+    .header-inner {
+        padding: .5rem;
+    }
+
+    .main-nav {
+        display: none;
+    }
+}
